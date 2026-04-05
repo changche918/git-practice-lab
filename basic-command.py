@@ -16,7 +16,10 @@
     方法3:
     如果你想讓某個檔案回到更早之前的某個版本（而不是最近的一次)
     語法： git restore --source <Commit ID> <檔案名稱>
-- git merge : 把分支合併 git checkout main、git merge feature
+- git merge
+    - git merge --no-ff強制產生合併提交。即使可以 Fast-forward，也要留下分支合併的痕跡（這在業界很常用，方便追蹤功能何時併入)
+    - git merge --abort救命仙丹！ 如果合併到一半發現衝突太亂修不完，輸入這行會直接取消合併，回到合併前的狀態
+    - git merge --squash把子分支的所有提交「壓縮」成一個提交再併進去，維持主分支的整潔。
 - git rebase : 把你的 commit「接到別的分支後面」，git checkout feature、git rebase main
 - git reset : 回到某個版本 
 - git revert <commit_id> : 清掉上一個 commit 點
