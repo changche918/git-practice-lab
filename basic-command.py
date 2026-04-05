@@ -7,4 +7,7 @@
 - git revert <commit_id> : 清掉上一個 commit 點
 '''
 
+# 1
 print("1. PRINT 輸出")
+# 2
+# 3
