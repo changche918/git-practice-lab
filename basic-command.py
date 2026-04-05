@@ -10,4 +10,5 @@
 # 1
 print("1. PRINT 輸出")
 # 2
+print("1. PRINT 輸出")
 # 3
