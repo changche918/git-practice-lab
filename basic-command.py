@@ -1,6 +1,6 @@
 # 20260405
 """
-- git restore
+- git restore #  處理還沒 commit 的東西
     '''
     # 改壞了一個檔案，想恢復原狀
     git restore index.html
