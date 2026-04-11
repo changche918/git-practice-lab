@@ -30,6 +30,11 @@
 - git revert <commit_id> : 清掉上一個 commit 點
     '''
     git revert abc1234
-
+    選項  /  意思
+    Accept Current Change保留「# test 10 我要測試 revert 指令」
+    Accept Incoming Change恢復成「# test 10」（revert 的目的）
+    Accept Both Changes兩個都留Compare Changes看差異再決定
+    git add .
+    git commit -m "revert 完成"
     '''
 """
