@@ -2,6 +2,7 @@
 """
 - git restore #  處理還沒 commit 的東西
     '''
+    先下，從暫存區退出來 : git restore --staged index.html
     # 改壞了一個檔案，想恢復原狀
     git restore index.html
 
@@ -10,6 +11,7 @@
     '''
 - git merge
     '''
+    merge 是本地操作 (commit後執行)
     # 你在 feature 分支寫完功能，想合進 main
     git checkout main  # 先切到 main
     git merge feature  # 把 feature 的內容合進來
