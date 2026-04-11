@@ -1,38 +1,33 @@
 # 20260405
-'''
+"""
 - git restore
-    """ 
-    方法1
-    如果你修改了一個檔案，但還沒執行 git add，現在後悔了想變回修改前的樣子：
-    語法： git restore <檔案名稱>
-    效果： 丟棄目前的修改，檔案內容會變回上一次 Commit 或暫存時的狀態。
-    ---
-    方法2:
-    如果你已經執行了 git add 把檔案送進暫存區（Staging Area），但突然發現還有東西沒改好，想把它從暫存區拿出來：
-    語法： git restore --staged <檔案名稱>
-    效果： 檔案會從暫存區退回到工作區，但修改的內容會保留。
-    常用場景： 不小心 git add . 加到不想提交的檔案，想把它踢出這次的 Commit 清單。
-    ---
-    方法3:
-    如果你想讓某個檔案回到更早之前的某個版本（而不是最近的一次)
-    語法： git restore --source <Commit ID> <檔案名稱>
+    '''
+    # 改壞了一個檔案，想恢復原狀
+    git restore index.html
+
+    # 改壞了全部檔案
+    git restore .
+    '''
 - git merge
-    - git merge --no-ff強制產生合併提交。即使可以 Fast-forward，也要留下分支合併的痕跡（這在業界很常用，方便追蹤功能何時併入)
-    - git merge --abort救命仙丹！ 如果合併到一半發現衝突太亂修不完，輸入這行會直接取消合併，回到合併前的狀態
-    - git merge --squash把子分支的所有提交「壓縮」成一個提交再併進去，維持主分支的整潔。
-- git rebase : 把你的 commit「接到別的分支後面」，git checkout feature、git rebase main
+    '''
+    # 你在 feature 分支寫完功能，想合進 main
+    git checkout main  # 先切到 main
+    git merge feature  # 把 feature 的內容合進來
+    '''
 - git reset : 回到某個版本 
+    '''
+    # 查看 commit 紀錄，找到想回去的版本
+    git log --oneline
+
+    # 回到那個版本，但保留修改在工作區
+    git reset abc1234
+
+    # 回到那個版本，什麼都不留（危險！）
+    git reset --hard abc1234
+    '''
 - git revert <commit_id> : 清掉上一個 commit 點
-'''
+    '''
+    git revert abc1234
 
-# 1
-print("1. PRINT 輸出")
-
-# 2
-print("1. PRINT 輸出")
-
-# 3
-print("1. PRINT 輸出")
-
-# 4
-print("1. PRINT 輸出")
+    '''
+"""
